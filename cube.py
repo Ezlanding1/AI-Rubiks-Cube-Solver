@@ -7,11 +7,12 @@ COLORS = [ 'Y', 'B', 'R', 'G', 'O', 'W' ]
 OPPOSITE_FACE = {'L': 'R', 'R': 'L', 'U': 'D', 'D': 'U', 'F': 'B', 'B': 'F'}
 INVERSE_MOVE="'"
 
-
+# Cube class representing a Rubik's Cube
 class Cube:
     
     def __init__(self):
         
+        # Generate a solved cube state
         self.faces = {
             face :
             numpy.array([ 
@@ -20,6 +21,7 @@ class Cube:
             for face, color in zip(FACES, COLORS)
         }
 
+        # Populate the adjacency list for face rotations
         self.adj = {
             'F' : [ ('U', 'R3b'), ('R', 'C1b'), ('D', 'R1'), ('L', 'C3') ],
             'B' : [ ('U', 'R1'), ('L', 'C1b'), ('D', 'R3b'), ('R', 'C3') ],
@@ -44,6 +46,7 @@ class Cube:
             return numpy.flip(result)
         return result
 
+    # Rotate the cube based on a sequence of moves
     def move(self, sequence):
         for move in sequence:
             face, inverse = move[0], move[-1] == INVERSE_MOVE
@@ -58,6 +61,7 @@ class Cube:
             for i in range(len(edges)-1):
                 edges[i][0], edges[i][1], edges[i][2] = edges[i+1][0], edges[i+1][1], edges[i+1][2]
 
+    # Generate a random scramble sequence for the cube
     def generate_scramble(scrambles=20):
         sequence = []
         lastOps = []
@@ -74,6 +78,7 @@ class Cube:
 
         return sequence
 
+    # Inverse a sequence of moves
     def inverse_sequence(sequence):
         return list(reversed(
             [
@@ -81,6 +86,8 @@ class Cube:
             ]
         ))
     
+    # Generate a random scramble and move the cube accordingly
+    # Return the inverse (solution) of the scramble sequence
     def scramble(self, scrambles=20):
         sequence = []
 

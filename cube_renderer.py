@@ -1,5 +1,6 @@
 from cube import Cube
 
+# Convert cube colors to console colors
 console_color = {
 	'Y' : '\033[33m■ \033[0m',
 	'B' : '\033[34m■ \033[0m',
@@ -13,6 +14,7 @@ console_color = {
 def merge_faces(face1, face2) -> str:
     return '\n'.join([f"{a} {b}" for a, b in zip(face1.split('\n'), face2.split('\n'))])[:-1]
 
+# Render a single face of the cube
 def render_face(face) -> str:
     result = ''
     
@@ -21,6 +23,7 @@ def render_face(face) -> str:
 
     return result
 
+# Render the entire cube
 def render_cube(cube: Cube):
     result = ''
 
