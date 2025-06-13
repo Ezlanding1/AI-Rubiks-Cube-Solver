@@ -98,6 +98,9 @@ class Cube:
                 return False
         return True
 
+    def __str__(self) -> str:
+        import cube_renderer
+        return cube_renderer.render_cube(self)
     
 if __name__ == '__main__':
     cube = Cube()
