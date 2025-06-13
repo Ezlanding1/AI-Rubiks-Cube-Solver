@@ -1,4 +1,4 @@
-# ML_AI_Project_2025 - Rubiks Cube Solver
+# Rubiks Cube Solver - ML Final Project 2025
 
 My Machine Learning 11.42 Final Project, an AI to solve 3x3 Rubik's Cubes using Pytorch
 
