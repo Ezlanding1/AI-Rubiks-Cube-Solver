@@ -2,6 +2,6 @@
 
 My Machine Learning 11.42 Final Project, an AI to solve 3x3 Rubik's Cubes using Pytorch
 
-See [the write up](./ML_AI_Project.ipynb) for the full description of the project
+See [the write up](./ML_Final_Project.ipynb) for the full description of the project
 
 ![gif_demo](./assets/output.gif)
